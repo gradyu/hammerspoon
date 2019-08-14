@@ -1,7 +1,5 @@
 require "config"
 
-hyper_keys = g_hyper_keys or {"ctrl", "alt"}
-
 -- load SpoonInstall
 hs.loadSpoon("SpoonInstall")
 Install = spoon.SpoonInstall
@@ -16,11 +14,10 @@ for _, v in pairs(hspoon_list) do
 end
 
 -- reload config
-reload_keys = g_reload_keys or {hyper_keys, "R"}
-autoreload = g_auto_reload or true
+reload_keys = g_reload_keys or {g_hyper_keys, "R"}
 Install:andUse("ReloadConfiguration", {
                  hotkeys = {reloadConfiguration = reload_keys },
-                 start =  autoreload
+                 start = g_auto_reload
 })
 
 -- load RecursiveBinder

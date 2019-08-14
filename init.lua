@@ -1,8 +1,6 @@
 require "config"
 require "preload"
 
-hyper_keys = g_hyper_keys or {"ctrl", "alt"}
-
 keymap = {
   [{ {}, 'f', 'files'}] = {
     [{ {}, 'D', 'Desktop' }] = function () openWithFinder('~/Desktop') end,
@@ -10,17 +8,13 @@ keymap = {
     [{ {}, 'h', 'Home' }] = function () openWithFinder('~') end,
     [{ {}, 'w', 'Workspace' }] = function () openWithFinder('~/Documents/workspace') end,
   },
-  [{ {}, 'a', 'apps'}] = {
-    [{ {}, 'e', "Emacs" }] = function () openOrFocusApp('Emacs') end,
-    [{ {}, 's', "Safari" }] = function () openOrFocusApp('Safari') end,
-    [{ {}, 'f', "Finder" }] = function () openOrFocusApp('Finder') end,
-    [{ {}, 'w', "Wechat" }] = function () openOrFocusApp('Wechat') end,
-    [{ {}, 'g', "Google" }] = function () openOrFocusApp('open http://google.com') end,
-  },
 }
 
+supervisor_keys = g_supervisor_keys or {g_hyper_keys, "space"}
 if hs.spoons.isLoaded("RecursiveBinder") then
-  hs.hotkey.bind(hyper_keys, "space", spoon.RecursiveBinder.recursiveBind(keymap))
+  local app = require("apps")
+  keymap[app.appkey] = app.keymaps
+  hs.hotkey.bind(supervisor_keys[1], supervisor_keys[2], spoon.RecursiveBinder.recursiveBind(keymap))
 end
 
 function openWithFinder(path)
