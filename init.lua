@@ -1,24 +1,7 @@
--- SpoonInstall
-hs.loadSpoon("SpoonInstall")
-Install = spoon.SpoonInstall
+require "config"
+require "preload"
 
--- auto reload
-Install:andUse("ReloadConfiguration", {start = true})
-
--- FnMate
-Install:andUse("FnMate")
-
--- SpeedMenu
-Install:andUse("SpeedMenu")
-
-hyper = {"ctrl", "alt"}
-
--- WindowGrid
-Install:andUse("WindowGrid", {
-                 config = { gridGeometries = {{ "3x2" }}},
-                 hotkeys = { show_grid = { hyper, "g" }},
-                 start = true
-})
+hyper_keys = g_hyper_keys or {"ctrl", "alt"}
 
 keymap = {
   [{ {}, 'f', 'files'}] = {
@@ -35,11 +18,10 @@ keymap = {
     [{ {}, 'g', "Google" }] = function () openOrFocusApp('open http://google.com') end,
   },
 }
-Install:andUse("RecursiveBinder", {
-                 fn = function()
-                   hs.hotkey.bind(hyper, "space", spoon.RecursiveBinder.recursiveBind(keymap))
-                 end,
-})
+
+if hs.spoons.isLoaded("RecursiveBinder") then
+  hs.hotkey.bind(hyper_keys, "space", spoon.RecursiveBinder.recursiveBind(keymap))
+end
 
 function openWithFinder(path)
   os.execute('open ' .. path)
