@@ -67,3 +67,19 @@ g_dirs_list = {
   {key = 'w', name = "Workspace", path = "~/Documents/workspace"},
   {key = 'l', name = "Library", path = "~/Library"},
 }
+
+-- ----------------------------------------
+-- CountDown Maps
+-- ----------------------------------------
+g_count_major_key = {'c', "countdown"}
+g_count_resume_pause_key = {'space', "Pause/Resume"}
+g_count_list = {
+  {key = '1', count = 5, desc="5 minutes"},
+  {key = '2', count = 10, desc="10 minutes"},
+  {key = '3', count = 15, desc="15 minutes"},
+  {key = '4', count = 30, desc="30 minutes"},
+  {key = '5', count = 45, desc="45 minutes"},
+  {key = '6', count = 60, desc="60 minutes"},
+  {key = '7', count = 90, desc="90 minutes"},
+  {key = '8', count = 120, desc="120 minutes"},
+}
