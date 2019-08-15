@@ -1,25 +1,25 @@
 require "config"
 
--- load SpoonInstall
-hs.loadSpoon("SpoonInstall")
-Install = spoon.SpoonInstall
+local obj = {}
+obj.__index = obj
 
--- load spoons
-hspoon_list = g_hspoon_list or {
-  "SpeedMenu",
-  "FnMate",
-}
-for _, v in pairs(hspoon_list) do
-  Install:andUse(v)
+obj.keymaps = {}
+
+local function generateKeymaps()
+  local models = {
+    "apps",
+    "dirs"
+  }
+  for _, v in ipairs(models) do
+    local m = require(v)
+    obj.keymaps[m.key] = m.map
+  end
+  -- local app = require("apps")
+  -- obj.keymaps[app.key] = app.map
+  -- local dir = require("dirs")
+  -- obj.keymaps[dir.key] = dir.map
 end
 
--- reload config
-reload_keys = g_reload_keys or {g_hyper_keys, "R"}
-Install:andUse("ReloadConfiguration", {
-                 hotkeys = {reloadConfiguration = reload_keys },
-                 start = g_auto_reload
-})
+generateKeymaps()
 
--- load RecursiveBinder
-Install:andUse("RecursiveBinder")
-
+return obj
