@@ -30,6 +30,7 @@ g_module_list = {
   "apps",
   "dirs",
   "countdown", -- require CountDown
+  "system",    -- require Caffeine
 }
 
 -- ----------------------------------------
@@ -52,7 +53,7 @@ g_help_keys = {g_hyper_keys, "/"}
 -- Apps Maps
 -- ----------------------------------------
 g_apps_major_key = {'a', "apps"}
-g_apps_list = {
+g_apps_keymap = {
   {key = 'e', name="Emacs", desc="Emacs"},
   {key = 'f', name="Finder", desc="Finder"},
   {key = 'i', name="iTerm", desc="iTerm2"},
@@ -67,7 +68,7 @@ g_apps_list = {
 -- Dirs Maps
 -- ----------------------------------------
 g_dirs_major_key = {'d', "dirs"}
-g_dirs_list = {
+g_dirs_keymap = {
   {key = 'h', name = "Home", path = "~"},
   {key = 'D', name = "Desktop", path = "~/Desktop"},
   {key = 'd', name = "Download", path = "~/Downloads"},
@@ -80,7 +81,7 @@ g_dirs_list = {
 -- ----------------------------------------
 g_count_major_key = {'c', "countdown"}
 g_count_resume_pause_key = {'space', "Pause/Resume"}
-g_count_list = {
+g_count_keymap = {
   {key = '1', count = 5, desc="5 minutes"},
   {key = '2', count = 10, desc="10 minutes"},
   {key = '3', count = 15, desc="15 minutes"},
@@ -90,3 +91,11 @@ g_count_list = {
   {key = '7', count = 90, desc="90 minutes"},
   {key = '8', count = 120, desc="120 minutes"},
 }
+-- ----------------------------------------
+-- System Maps
+-- ----------------------------------------
+g_system_major_key = {'s', "system"}
+g_system_keymap = {
+  caffeine = {key = 'space', desc = "sleep toggle" }
+}
+
