@@ -16,4 +16,10 @@ if hs.spoons.isLoaded("Caffeine") then
   spoon.Caffeine:start()
 end
 
+if hs.spoons.isLoaded("AClock") then
+  local k = g_system_keymap.aclock.key or 'return'
+  local name = g_system_keymap.aclock.desc or "clock"
+  m.map[{{}, k, name}] = function () spoon.AClock:toggleShow() end
+end
+
 return m

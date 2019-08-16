@@ -30,7 +30,7 @@ g_module_list = {
   "apps",
   "dirs",
   "countdown", -- require CountDown
-  "system",    -- require Caffeine
+  "system",    -- require Caffeine AClock
 }
 
 -- ----------------------------------------
@@ -96,6 +96,7 @@ g_count_keymap = {
 -- ----------------------------------------
 g_system_major_key = {'s', "system"}
 g_system_keymap = {
-  caffeine = {key = 'space', desc = "sleep toggle" }
+  caffeine = { key = 'space', desc = "sleep toggle" },
+  aclock = { key = 'return', desc = "clock" },
 }
 
