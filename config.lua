@@ -5,11 +5,12 @@
 g_auto_reload = fasle
 
 -- ----------------------------------------
--- Sponns Config
--- Note: SpoonInstall, ReloadConfiguration 
---       and RecursiveBinder default to load 
+-- Sponns and modules Config
+-- Note: default load as follow:
+--       SpoonInstall
+--       RecursiveBinder
+--       ReloadConfiguration 
 -- ----------------------------------------
-
 -- Spoons which will be loaded 
 g_hspoon_list = {
   "AClock",
@@ -23,6 +24,12 @@ g_hspoon_list = {
   "WindowGrid",
   "WindowHalfsAndThirds",
   "WindowScreenLeftAndRight"
+}
+-- Modules which will be load
+g_module_list = {
+  "apps",
+  "dirs",
+  "countdown", -- require CountDown
 }
 
 -- ----------------------------------------

@@ -17,13 +17,12 @@ Install:andUse("ReloadConfiguration", {
   start = g_auto_reload
 })
 
--- load keymaps
+-- load keymap
 supervisor_keys = g_supervisor_keys or {g_hyper_keys, "space"}
 Install:andUse("RecursiveBinder", {
   fn = function ()
-    local preload = require("preload")
     hs.hotkey.bind(supervisor_keys[1], supervisor_keys[2], 
-        spoon.RecursiveBinder.recursiveBind(preload.keymaps))
+        spoon.RecursiveBinder.recursiveBind(require("keymap")))
   end 
 })
 
