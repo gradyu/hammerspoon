@@ -60,14 +60,16 @@ g_help_keys = {g_hyper_keys, '/'}
 -- ----------------------------------------
 g_apps_major_key = {'a', "apps"}
 g_apps_keymap = {
+  {key = 'c', name="CleanMyMac X", desc="CleanMyMac"},
   {key = 'e', name="Emacs", desc="Emacs"},
   {key = 'f', name="Finder", desc="Finder"},
   {key = 'i', name="iTerm", desc="iTerm2"},
   {key = 's', name="Safari", desc="Safari"},
-  {key = 'w', name="Wechat", desc="微信"},
+  {key = 'w', name="Wechat", desc="wechat"},
+  {key = 'm', name="NeteaseMusic", desc="music"},
+  {key = 'v', id="com.microsoft.VSCode", desc="vscode"},
   {key = 'c', id="com.google.Chrome", desc="Chrome"},
-  {key = 'y', id="com.apple.systempreferences", desc="系统设置"},
-  {key = 'g', url="https://google.com", desc="Google Search"},
+  {key = 'y', id="com.apple.systempreferences", desc="preferences"},
 }
 
 -- ----------------------------------------
@@ -75,11 +77,15 @@ g_apps_keymap = {
 -- ----------------------------------------
 g_dirs_major_keys = {'d', "dirs"}
 g_dirs_keymap = {
+  {key = 'a', name = "Android", path = "~/Documents/workspace/android"},
+  {key = 'b', name = "Blog", path = "~/Documents/workspace/blog"},
   {key = 'h', name = "Home", path = "~"},
   {key = 'D', name = "Desktop", path = "~/Desktop"},
   {key = 'd', name = "Download", path = "~/Downloads"},
   {key = 'w', name = "Workspace", path = "~/Documents/workspace"},
   {key = 'l', name = "Library", path = "~/Library"},
+  {key = 'p', name = "Dropbox", path = "~/Documents/Dropbox"},
+  {key = 'p', name = "Org", path = "~/Documents/Dropbox/Grady-RMBP/org"}
 }
 
 -- ----------------------------------------
