@@ -5,7 +5,7 @@ local m = {}
 m.key = {}
 m.map = {}
 
-local majorkey = g_count_major_key or {}
+local majorkey = g_count_major_keys or {}
 
 if hs.spoons.isLoaded("CountDown") then
   local singleKey = spoon.RecursiveBinder.singleKey

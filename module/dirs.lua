@@ -5,7 +5,7 @@ local m = {}
 m.key = {}
 m.map = {}
 
-local majorkey = g_dirs_major_key or {}
+local majorkey = g_dirs_major_keys or {}
 if g_dirs_keymap then
   local singleKey = spoon.RecursiveBinder.singleKey
   m.key = singleKey(majorkey[1] or 'd', majorkey[2] or "dirs")

@@ -9,15 +9,14 @@ g_auto_reload = fasle
 -- Note: default load as follow:
 --       SpoonInstall
 --       RecursiveBinder
---       ReloadConfiguration 
+--       ReloadConfiguration
 -- ----------------------------------------
--- Spoons which will be loaded 
+-- Spoons which will be loaded
 g_hspoon_list = {
   "AClock",
   "Caffeine",
   "CountDown",
   "FnMate",
-  "KSheet",
   "Seal",
   "SpeedMenu",
   "URLDispatcher",
@@ -31,6 +30,7 @@ g_module_list = {
   "dirs",
   "countdown", -- require CountDown
   "system",    -- require Caffeine AClock
+  "window",    -- require WindowGrid
 }
 
 -- ----------------------------------------
@@ -41,13 +41,19 @@ g_module_list = {
 g_hyper_keys = {"ctrl", "alt"}
 
 -- reload keys
-g_reload_keys = {g_hyper_keys, "R"}
+g_reload_keys = {g_hyper_keys, 'R'}
 
 -- supervisor keys
-g_supervisor_keys = {g_hyper_keys, "space"}
+g_supervisor_keys = {g_hyper_keys, 'space'}
+
+-- window grid keys
+g_window_grid_keys = {g_hyper_keys, ','}
+
+-- seal manager keys
+g_seal_keys = {g_hyper_keys, 'm'}
 
 -- help keys
-g_help_keys = {g_hyper_keys, "/"}
+g_help_keys = {g_hyper_keys, '/'}
 
 -- ----------------------------------------
 -- Apps Maps
@@ -67,7 +73,7 @@ g_apps_keymap = {
 -- ----------------------------------------
 -- Dirs Maps
 -- ----------------------------------------
-g_dirs_major_key = {'d', "dirs"}
+g_dirs_major_keys = {'d', "dirs"}
 g_dirs_keymap = {
   {key = 'h', name = "Home", path = "~"},
   {key = 'D', name = "Desktop", path = "~/Desktop"},
@@ -79,7 +85,7 @@ g_dirs_keymap = {
 -- ----------------------------------------
 -- CountDown Maps
 -- ----------------------------------------
-g_count_major_key = {'c', "countdown"}
+g_count_major_keys = {'c', "countdown"}
 g_count_resume_pause_key = {'space', "Pause/Resume"}
 g_count_keymap = {
   {key = '1', count = 5, desc="5 minutes"},
@@ -94,9 +100,15 @@ g_count_keymap = {
 -- ----------------------------------------
 -- System Maps
 -- ----------------------------------------
-g_system_major_key = {'s', "system"}
+g_system_major_keys = {'s', "system"}
 g_system_keymap = {
   caffeine = { key = 'space', desc = "sleep toggle" },
   aclock = { key = 'return', desc = "clock" },
 }
-
+-- ----------------------------------------
+-- Window Maps
+-- ---------------------------------------
+g_window_major_keys = {'w', "window"}
+g_window_keymap = {
+  wingrid = { k = 'g', desc = "windows grid" },
+}

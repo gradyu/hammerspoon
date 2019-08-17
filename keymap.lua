@@ -6,7 +6,7 @@ local modules = g_module_list or {
 }
 
 for _, v in ipairs(modules) do
-  local m = require(v)
+  local m = require("module/" .. v)
   keymap[m.key] = m.map
 end
 

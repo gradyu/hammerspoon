@@ -5,7 +5,7 @@ local m = {}
 m.key = {}
 m.map = {}
 
-local majorkey = g_system_major_key or {}
+local majorkey = g_system_major_keys or {}
 
 m.key = {{}, majorkey[1] or 's', majorkey[2] or "system"}
 
