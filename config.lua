@@ -117,4 +117,19 @@ g_system_keymap = {
 g_window_major_keys = {'w', "window"}
 g_window_keymap = {
   wingrid = { k = 'g', desc = "windows grid" },
+  winmgr = {
+    { key = 'h', method = "leftHalf", desc = "left half" },
+    { key = 'l', method = "rightHalf", desc = "right half" },
+    { key = 'k', method = "topHalf", desc = "top half" },
+    { key = 'j', method = "bottomHalf", desc = "bottom half" },
+    { key = 'H', method = "thirdLeft", desc = "left third" },
+    { key = 'L', method = "thirdRight", desc = "right third" },
+    { key = 'K', method = "thirdUp", desc = "top third" },
+    { key = 'J', method = "thirdDown", desc = "bottom third" },
+    { key = 'J', method = "thirdDown", desc = "bottom third" },
+    { key = 'm', method = "maximize", desc = "maximize" },
+    { key = 'c', method = "center", desc = "center" },
+    { key = 'z', method = "undo", desc = "undo" },
+  }
 }
+

@@ -8,10 +8,10 @@ m.map = {}
 
 local majorkey = g_apps_major_key or {}
 if g_apps_keymap then
-  local singleKey = spoon.RecursiveBinder.singleKey
-  m.key = singleKey(majorkey[1] or 'a', majorkey[2] or "apps")
+  local utils = require("utils")
+  m.key = utils.singleKey(majorkey[1] or 'a', majorkey[2] or "apps")
   for _, app in ipairs(g_apps_keymap) do
-    local k = singleKey(app.key, app.desc)
+    local k = utils.singleKey(app.key, app.desc)
     if app.name then
       m.map[k] = function () openAppByName(app.name) end
     elseif app.id then
