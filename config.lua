@@ -46,11 +46,23 @@ g_reload_keys = {g_hyper_keys, 'R'}
 -- supervisor keys
 g_supervisor_keys = {g_hyper_keys, 'space'}
 
+-- lock screen keys
+g_lock_screen_keys = {g_hyper_keys, 'L'}
+
 -- window grid keys
 g_window_grid_keys = {g_hyper_keys, ','}
 
+-- aclock keys
+g_aclock_toggle_keys = {g_hyper_keys, 'T'}
+
 -- seal manager keys
-g_seal_keys = {g_hyper_keys, 'm'}
+g_seal_keys = {g_hyper_keys, 'M'}
+
+-- hammerspoon console toggle
+g_hs_console_keys = {g_hyper_keys, 'Z'}
+
+-- hammerspoon home keys
+g_hs_home_keys = {g_hyper_keys, 'H'}
 
 -- help keys
 g_help_keys = {g_hyper_keys, '/'}
@@ -127,7 +139,7 @@ g_window_keymap = {
     { key = 'K', method = "thirdUp", desc = "top third" },
     { key = 'J', method = "thirdDown", desc = "bottom third" },
     { key = 'J', method = "thirdDown", desc = "bottom third" },
-    { key = 'm', method = "maximize", desc = "maximize" },
+    { key = 'm', method = "toggleMaximized", desc = "toggle maximized" },
     { key = 'c', method = "center", desc = "center" },
     { key = 'z', method = "undo", desc = "undo" },
   }

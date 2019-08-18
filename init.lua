@@ -3,6 +3,8 @@ require "config"
 local utils = hs.fnutils
 local sp = hs.spoons
 
+local hyper = g_hyper_keys or {"ctrl", "alt"}
+
 -- load SpoonInstall
 hs.loadSpoon("SpoonInstall")
 local Install = spoon.SpoonInstall
@@ -14,14 +16,14 @@ for _, v in pairs(hspoon_list) do
 end
 
 -- reload config
-local reload_keys = g_reload_keys or {g_hyper_keys, 'R'}
+local reload_keys = g_reload_keys or {hyper, 'R'}
 Install:andUse("ReloadConfiguration", {
   hotkeys = {reloadConfiguration = reload_keys },
   start = g_auto_reload
 })
 
 -- RecursiveBinder
-local supervisor_keys = g_supervisor_keys or {g_hyper_keys, 'space'}
+local supervisor_keys = g_supervisor_keys or {hyper, 'space'}
 Install:andUse("RecursiveBinder", {
   fn = function ()
     hs.hotkey.bind(supervisor_keys[1], supervisor_keys[2],
@@ -31,7 +33,7 @@ Install:andUse("RecursiveBinder", {
 
 -- Seal
 if utils.contains(hspoon_list, "Seal") and sp.isLoaded("Seal") then
-  local seal_keys = g_seal_keys or {g_hyper_keys, 'm'}
+  local seal_keys = g_seal_keys or {hyper, 'm'}
   sp.use("Seal", {
            hotkeys = {show = seal_keys}
   })
@@ -39,7 +41,7 @@ end
 
 -- window grid
 if utils.contains(hspoon_list, "WindowGrid") and sp.isLoaded("WindowGrid") then
-  local window_grid_keys = g_window_grid_keys or {g_hyper_keys, ','}
+  local window_grid_keys = g_window_grid_keys or {hyper, ','}
   sp.use("WindowGrid", {
            config = {gridGeometries = {{"3x2"}}},
            hotkeys = {show_grid = window_grid_keys},
@@ -84,5 +86,31 @@ if utils.contains(hspoon_list, "WindowScreenLeftAndRight") and sp.isLoaded("Wind
            hotkeys = 'default'
   })
 end
+
+-- AClock
+local aclock_toggle_keys = g_aclock_toggle_keys or {hyper, 'T'}
+if utils.contains(hspoon_list, "AClock") and sp.isLoaded("AClock") then
+  hs.hotkey.bind(aclock_toggle_keys[1], aclock_toggle_keys[2], "Clock toggle",
+                 function () spoon.AClock:toggleShow() end)
+end
+
+
+-- hammerspoon home
+local hs_home_keys = g_hs_home_keys or {hyper, 'H'}
+hs.hotkey.bind(hs_home_keys[1], hs_home_keys[2], "Hammerspoon home", function ()
+                 hs.doc.hsdocs.forceExternalBrowser(true)
+                 hs.doc.hsdocs.moduleEntitiesInSidebar(true)
+                 hs.doc.hsdocs.help()
+end)
+
+-- lock screen
+local lock_keys = g_lock_screen_keys or {hyper, 'L'}
+hs.hotkey.bind(lock_keys[1], lock_keys[2], "Lock screen",
+               function () hs.caffeinate.lockScreen() end)
+
+-- hammerspoon console toggle
+local console_keys = g_hs_console_keys or {hyper, 'Z'}
+hs.hotkey.bind(console_keys[1], console_keys[2], "Hammerspoon console",
+               function () hs.toggleConsole() end)
 
 hs.alert.show("Hammerspoon config loaded")
