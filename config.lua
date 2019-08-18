@@ -122,6 +122,11 @@ g_system_major_keys = {'s', "system"}
 g_system_keymap = {
   caffeine = { key = 'space', desc = "sleep toggle" },
   aclock = { key = 'return', desc = "clock" },
+  sp = {
+    { key = 'h', fn = "hs.doc.hsdocs.help", desc = "hammerspoon home" },
+    { key = 'z', fn = "hs.toggleConsole", desc = "hammerspoon console" },
+    { key = 'l', fn = "hs.caffeinate.lockScreen", desc = "lock screen" },
+  }
 }
 -- ----------------------------------------
 -- Window Maps
