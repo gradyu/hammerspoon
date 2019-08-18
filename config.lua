@@ -122,10 +122,12 @@ g_system_major_keys = {'s', "system"}
 g_system_keymap = {
   caffeine = { key = 'space', desc = "sleep toggle" },
   aclock = { key = 'return', desc = "clock" },
-  sp = {
-    { key = 'h', fn = "hs.doc.hsdocs.help", desc = "hammerspoon home" },
-    { key = 'z', fn = "hs.toggleConsole", desc = "hammerspoon console" },
-    { key = 'l', fn = "hs.caffeinate.lockScreen", desc = "lock screen" },
+  funcs = {
+    { key = 'h', fn = "funcs.showHammerspoonHome", desc = "sp home" },
+    { key = 'z', fn = "funcs.toggleConsole", desc = "sp console" },
+    { key = 'c', fn = "funcs.clearConsole", desc = "clean console" },
+    { key = 'l', fn = "funcs.systemLockSreen", desc = "lock screen" },
+    { key = 'f', fn = "funcs.systemRestart", desc = "restart" },
   }
 }
 -- ----------------------------------------

@@ -1,4 +1,5 @@
 require "config"
+require "funcs"
 
 local utils = hs.fnutils
 local sp = hs.spoons
@@ -35,7 +36,11 @@ Install:andUse("RecursiveBinder", {
 if utils.contains(hspoon_list, "Seal") and sp.isLoaded("Seal") then
   local seal_keys = g_seal_keys or {hyper, 'm'}
   sp.use("Seal", {
-           hotkeys = {show = seal_keys}
+           hotkeys = {show = seal_keys},
+           fn = function (s)
+             print("Seal load plugins")
+             s:loadPlugins({"apps", "calc", "rot13", "urlformats", "useractions"})
+           end
   })
 end
 
@@ -94,23 +99,16 @@ if utils.contains(hspoon_list, "AClock") and sp.isLoaded("AClock") then
                  function () spoon.AClock:toggleShow() end)
 end
 
-
 -- hammerspoon home
 local hs_home_keys = g_hs_home_keys or {hyper, 'H'}
-hs.hotkey.bind(hs_home_keys[1], hs_home_keys[2], "Hammerspoon home", function ()
-                 hs.doc.hsdocs.forceExternalBrowser(true)
-                 hs.doc.hsdocs.moduleEntitiesInSidebar(true)
-                 hs.doc.hsdocs.help()
-end)
+hs.hotkey.bind(hs_home_keys[1], hs_home_keys[2], "Hammerspoon home", funcs.showHammerspoonHome)
 
 -- lock screen
 local lock_keys = g_lock_screen_keys or {hyper, 'L'}
-hs.hotkey.bind(lock_keys[1], lock_keys[2], "Lock screen",
-               function () hs.caffeinate.lockScreen() end)
+hs.hotkey.bind(lock_keys[1], lock_keys[2], "Lock screen", funcs.systemLockSreen)
 
 -- hammerspoon console toggle
 local console_keys = g_hs_console_keys or {hyper, 'Z'}
-hs.hotkey.bind(console_keys[1], console_keys[2], "Hammerspoon console",
-               function () hs.toggleConsole() end)
+hs.hotkey.bind(console_keys[1], console_keys[2], "Hammerspoon console", funcs.toggleConsole)
 
 hs.alert.show("Hammerspoon config loaded")

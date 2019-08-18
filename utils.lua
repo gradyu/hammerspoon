@@ -1,6 +1,6 @@
 -- Utils
 
-local m = {}
+local utils = {}
 
 local function keyboardUpper(key)
   local upperTable = {
@@ -60,7 +60,7 @@ local function keyboardUpper(key)
   end
 end
 
-function m.singleKey(key, name)
+function utils.singleKey(key, name)
   local mod = {}
   if key == keyboardUpper(key) and string.len(key) == 1 then
     mod = {'shift'}
@@ -75,7 +75,7 @@ function m.singleKey(key, name)
 end
 
 
-function m.findfunction(x)
+function utils.findfunction(x)
   assert(type(x) == "string")
   local f=_G
   for v in x:gmatch("[^%.]+") do
@@ -91,4 +91,4 @@ function m.findfunction(x)
   end
 end
 
-return m
+return utils

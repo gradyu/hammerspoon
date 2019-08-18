@@ -24,8 +24,8 @@ if hs.spoons.isLoaded("AClock") then
   m.map[utils.singleKey(k, name)] = function () spoon.AClock:toggleShow() end
 end
 
-if g_system_keymap and g_system_keymap.sp then
-  for _, v in ipairs(g_system_keymap.sp) do
+if g_system_keymap and g_system_keymap.funcs then
+  for _, v in ipairs(g_system_keymap.funcs) do
     m.map[utils.singleKey(v.key, v.desc)] = utils.findfunction(v.fn)
   end
 end
