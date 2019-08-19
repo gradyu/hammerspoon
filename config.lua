@@ -123,9 +123,9 @@ g_system_keymap = {
   caffeine = { key = 'space', desc = "sleep toggle" },
   aclock = { key = 'return', desc = "clock" },
   funcs = {
-    { key = 'h', fn = "funcs.showHammerspoonHome", desc = "sp home" },
-    { key = 'z', fn = "funcs.toggleConsole", desc = "sp console" },
-    { key = 'c', fn = "funcs.clearConsole", desc = "clean console" },
+    { key = 'h', fn = "funcs.showHammerspoonHome", desc = "hsp home" },
+    { key = 'z', fn = "funcs.toggleConsole", desc = "hsp console" },
+    { key = 'c', fn = "funcs.clearConsole", desc = "clear console" },
     { key = 'l', fn = "funcs.systemLockSreen", desc = "lock screen" },
     { key = 'f', fn = "funcs.systemRestart", desc = "restart" },
   }
@@ -144,7 +144,6 @@ g_window_keymap = {
     { key = 'H', method = "thirdLeft", desc = "left third" },
     { key = 'L', method = "thirdRight", desc = "right third" },
     { key = 'K', method = "thirdUp", desc = "top third" },
-    { key = 'J', method = "thirdDown", desc = "bottom third" },
     { key = 'J', method = "thirdDown", desc = "bottom third" },
     { key = 'm', method = "toggleMaximized", desc = "toggle maximized" },
     { key = 'c', method = "center", desc = "center" },

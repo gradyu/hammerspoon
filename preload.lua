@@ -5,6 +5,9 @@ hs.window.animationDuration = 0.2
 hs.shutdownCallback = function() hs.settings.set('history', hs.console.getHistory()) end
 hs.console.setHistory(hs.settings.get('history') or {})
 
+-- hotkey logge info too much
+hs.hotkey.setLogLevel("warning")
+
 -- ensure CLI installed
 hs.ipc.cliInstall()
 

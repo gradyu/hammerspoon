@@ -14,7 +14,6 @@ if hs.spoons.isLoaded("CountDown") then
     spoon.CountDown:pauseOrResume()
   end
   m.map[{{}, 'return', "30 minutes"}] = function ()
-    print("countdown 30")
     spoon.CountDown:startFor(30)
   end
   m.map[{{}, '0', "cancel"}] = function ()

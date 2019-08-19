@@ -1,4 +1,5 @@
 require "config"
+require "preload"
 require "funcs"
 
 local utils = hs.fnutils
@@ -38,9 +39,9 @@ if utils.contains(hspoon_list, "Seal") and sp.isLoaded("Seal") then
   sp.use("Seal", {
            hotkeys = {show = seal_keys},
            fn = function (s)
-             print("Seal load plugins")
              s:loadPlugins({"apps", "calc", "rot13", "urlformats", "useractions"})
-           end
+           end,
+           start = true,
   })
 end
 
