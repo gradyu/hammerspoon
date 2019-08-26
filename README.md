@@ -1,2 +1,0 @@
-# hammerspoon
-config for hammerspoon

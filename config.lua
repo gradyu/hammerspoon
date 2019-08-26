@@ -72,7 +72,7 @@ g_help_keys = {g_hyper_keys, '/'}
 -- ----------------------------------------
 g_apps_major_key = {'a', "apps"}
 g_apps_keymap = {
-  {key = 'c', name="CleanMyMac X", desc="CleanMyMac"},
+  {key = 'C', name="CleanMyMac X", desc="CleanMyMac"},
   {key = 'e', name="Emacs", desc="Emacs"},
   {key = 'f', name="Finder", desc="Finder"},
   {key = 'i', name="iTerm", desc="iTerm2"},
@@ -97,7 +97,7 @@ g_dirs_keymap = {
   {key = 'w', name = "Workspace", path = "~/Documents/workspace"},
   {key = 'l', name = "Library", path = "~/Library"},
   {key = 'p', name = "Dropbox", path = "~/Documents/Dropbox"},
-  {key = 'p', name = "Org", path = "~/Documents/Dropbox/Grady-RMBP/org"}
+  {key = 'o', name = "Org", path = "~/Documents/Dropbox/Grady-RMBP/org"}
 }
 
 -- ----------------------------------------

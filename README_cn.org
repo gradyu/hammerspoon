@@ -1,0 +1,6 @@
+#+TITLE: Hammerspoon个人配置
+#+AUTHOR: Grady
+* 安装
+** 安装 hammerspoon Apps
+
+* 自定义
