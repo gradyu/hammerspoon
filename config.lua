@@ -44,7 +44,8 @@ g_hyper_keys = {"ctrl", "alt"}
 g_reload_keys = {g_hyper_keys, 'R'}
 
 -- supervisor keys
-g_supervisor_keys = {g_hyper_keys, 'space'}
+-- g_supervisor_keys = {g_hyper_keys, 'space'}
+g_supervisor_keys = {{"ctrl"}, 'space'}
 
 -- lock screen keys
 g_lock_screen_keys = {g_hyper_keys, 'L'}

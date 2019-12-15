@@ -96,20 +96,20 @@ end
 -- AClock
 local aclock_toggle_keys = g_aclock_toggle_keys or {hyper, 'T'}
 if utils.contains(hspoon_list, "AClock") and sp.isLoaded("AClock") then
-  hs.hotkey.bind(aclock_toggle_keys[1], aclock_toggle_keys[2], "Clock toggle",
+  hs.hotkey.bind(aclock_toggle_keys[1], aclock_toggle_keys[2], nil,
                  function () spoon.AClock:toggleShow() end)
 end
 
 -- hammerspoon home
 local hs_home_keys = g_hs_home_keys or {hyper, 'H'}
-hs.hotkey.bind(hs_home_keys[1], hs_home_keys[2], "Hammerspoon home", funcs.showHammerspoonHome)
+hs.hotkey.bind(hs_home_keys[1], hs_home_keys[2], nil, funcs.showHammerspoonHome)
 
 -- lock screen
 local lock_keys = g_lock_screen_keys or {hyper, 'L'}
-hs.hotkey.bind(lock_keys[1], lock_keys[2], "Lock screen", funcs.systemLockSreen)
+hs.hotkey.bind(lock_keys[1], lock_keys[2], nil, funcs.systemLockSreen)
 
 -- hammerspoon console toggle
 local console_keys = g_hs_console_keys or {hyper, 'Z'}
-hs.hotkey.bind(console_keys[1], console_keys[2], "Hammerspoon console", funcs.toggleConsole)
+hs.hotkey.bind(console_keys[1], console_keys[2], nil, funcs.toggleConsole)
 
 hs.alert.show("Hammerspoon config loaded")
