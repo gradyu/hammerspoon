@@ -44,8 +44,7 @@ g_hyper_keys = {"ctrl", "alt"}
 g_reload_keys = {g_hyper_keys, 'R'}
 
 -- supervisor keys
--- g_supervisor_keys = {g_hyper_keys, 'space'}
-g_supervisor_keys = {{"ctrl"}, 'space'}
+g_supervisor_keys = {g_hyper_keys, 'space'}
 
 -- lock screen keys
 g_lock_screen_keys = {g_hyper_keys, 'L'}
@@ -73,15 +72,17 @@ g_help_keys = {g_hyper_keys, '/'}
 -- ----------------------------------------
 g_apps_major_key = {'a', "apps"}
 g_apps_keymap = {
-  {key = 'C', name="CleanMyMac X", desc="CleanMyMac"},
-  {key = 'e', name="Emacs", desc="Emacs"},
-  {key = 'f', name="Finder", desc="Finder"},
+  {key = 'a', name="Android Studio", desc="android"},
+  {key = 'c', name="CleanMyMac X", desc="CleanMyMac"},
+  {key = 'e', name="Emacs", desc="emacs"},
+  {key = 'f', name="Finder", desc="finder"},
   {key = 'i', name="iTerm", desc="iTerm2"},
-  {key = 's', name="Safari", desc="Safari"},
+  {key = 's', name="Spark", desc="spark"},
   {key = 'w', name="Wechat", desc="wechat"},
   {key = 'm', name="NeteaseMusic", desc="music"},
+  {key = 'x', name="Xcode", desc="xcode"},
+  {key = 'b', id="com.google.Chrome", desc="browser"},
   {key = 'v', id="com.microsoft.VSCode", desc="vscode"},
-  {key = 'c', id="com.google.Chrome", desc="Chrome"},
   {key = 'y', id="com.apple.systempreferences", desc="preferences"},
 }
 
@@ -98,7 +99,7 @@ g_dirs_keymap = {
   {key = 'w', name = "Workspace", path = "~/Documents/workspace"},
   {key = 'l', name = "Library", path = "~/Library"},
   {key = 'p', name = "Dropbox", path = "~/Documents/Dropbox"},
-  {key = 'o', name = "Org", path = "~/Documents/Dropbox/Grady-RMBP/org"}
+  {key = 'o', name = "Org", path = "~/Documents/Dropbox/org"}
 }
 
 -- ----------------------------------------
